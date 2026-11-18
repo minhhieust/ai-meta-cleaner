@@ -23,14 +23,25 @@ pip install -r requirements.txt
 
 #### 2. Install as an Agent Skill
 * **For Claude Code (Global):**
+  Copy the `ai-meta-cleaner` folder into your global Claude skills directory:
   ```bash
+  # macOS / Linux
   cp -r ai-meta-cleaner ~/.claude/skills/
+
+  # Windows (PowerShell)
+  Copy-Item -Recurse ai-meta-cleaner "\$env:USERPROFILE\.claude\skills\"
   ```
 * **For OpenAI Codex (Global):**
-  ```bash
-  cp -r ai-meta-cleaner ~/.agents/skills/
-  ```
-  *(Alternatively, place the folder inside `.claude/skills/` or `.agents/skills/` within any project repository).*
+  Copy the `ai-meta-cleaner` folder into your Codex skills directory:
+  * **Windows:** `C:\Users\<OS_UserName>\.codex\skills\`
+    ```powershell
+    Copy-Item -Recurse ai-meta-cleaner "C:\Users\<OS_UserName>\.codex\skills\"
+    ```
+  * **macOS / Linux:** `~/.codex/skills/` (or `~/.agents/skills/`)
+    ```bash
+    cp -r ai-meta-cleaner ~/.codex/skills/
+    ```
+  *(Alternatively, place the folder inside `.claude/skills/` or `.codex/skills/` within any specific project repository).*
 
 ### Usage
 
@@ -73,20 +84,31 @@ pip install -r requirements.txt
 
 #### 2. Cài đặt làm Agent Skill
 * **Dành cho Claude Code (Toàn cục):**
+  Sao chép thư mục `ai-meta-cleaner` vào thư mục skills của Claude:
   ```bash
+  # macOS / Linux
   cp -r ai-meta-cleaner ~/.claude/skills/
+
+  # Windows (PowerShell)
+  Copy-Item -Recurse ai-meta-cleaner "\$env:USERPROFILE\.claude\skills\"
   ```
 * **Dành cho OpenAI Codex (Toàn cục):**
-  ```bash
-  cp -r ai-meta-cleaner ~/.agents/skills/
-  ```
-  *(Hoặc đặt thư mục này vào `.claude/skills/` hay `.agents/skills/` bên trong thư mục dự án của bạn).*
+  Sao chép thư mục `ai-meta-cleaner` vào thư mục skills của Codex:
+  * **Trên Windows:** Lưu tại đường dẫn `C:\Users\<OS_UserName>\.codex\skills\`
+    ```powershell
+    Copy-Item -Recurse ai-meta-cleaner "C:\Users\<OS_UserName>\.codex\skills\"
+    ```
+  * **Trên macOS / Linux:** Lưu tại `~/.codex/skills/` (hoặc `~/.agents/skills/`)
+    ```bash
+    cp -r ai-meta-cleaner ~/.codex/skills/
+    ```
+  *(Hoặc bạn có thể đặt thư mục này vào `.claude/skills/` hay `.codex/skills/` bên trong thư mục dự án cụ thể của bạn).*
 
 ### Hướng dẫn sử dụng
 
 #### Gọi tự nhiên qua Claude Code hoặc Codex
 Sau khi cài đặt, bạn chỉ cần ra lệnh bằng ngôn ngữ tự nhiên:
-> *"Xóa metadata AI cho ảnh `/duong/dan/toi/anh_tin_tuc.png`"*
+> *"Xóa metadata AI cho ảnh `C:\images\anh_tin_tuc.png`"*
 > *"Làm sạch tag C2PA hàng loạt cho tất cả ảnh trong thư mục `./banners`"*
 > *"Dọn dẹp metadata toàn bộ ảnh kể cả thư mục con trong `./posts` và lưu sang `./posts_clean`"*
 
