@@ -29,7 +29,7 @@ pip install -r requirements.txt
   cp -r ai-meta-cleaner ~/.claude/skills/
 
   # Windows (PowerShell)
-  Copy-Item -Recurse ai-meta-cleaner "\$env:USERPROFILE\.claude\skills\"
+  Copy-Item -Recurse ai-meta-cleaner "$env:USERPROFILE\.claude\skills\"
   ```
 * **For OpenAI Codex (Global):**
   Copy the `ai-meta-cleaner` folder into your Codex skills directory:
@@ -45,13 +45,21 @@ pip install -r requirements.txt
 
 ### Usage
 
-#### Via Claude Code or Codex
-Once installed, simply prompt your AI agent naturally:
+#### 1. Via Claude Code or Codex
+**Method A: Quick Chat Attachment (Easiest)**
+Select an image from the chat box of **Codex** or **Claude Code** (or copy and paste the image directly into the chat), then use this simple prompt:
+```text
+$ai-meta-cleaner remove AI Meta for this image
+```
+*(Note: In Claude Code, you can also invoke the skill using `/ai-meta-cleaner`).*
+
+**Method B: Natural Language with File or Folder Paths**
+Prompt your AI agent with specific paths for single or batch processing:
 > *"Clean AI metadata from `/path/to/my_image.png`"*
 > *"Batch remove C2PA tags from all images in `./assets/banners`"*
 > *"Clean metadata recursively in `./posts` and save them to `./posts_clean`"*
 
-#### Via Command Line (CLI)
+#### 2. Via Command Line (CLI)
 ```bash
 # Clean a single image (outputs clean_photo.png in the same folder)
 python scripts/remove_c2pa.py path/to/photo.png
@@ -90,7 +98,7 @@ pip install -r requirements.txt
   cp -r ai-meta-cleaner ~/.claude/skills/
 
   # Windows (PowerShell)
-  Copy-Item -Recurse ai-meta-cleaner "\$env:USERPROFILE\.claude\skills\"
+  Copy-Item -Recurse ai-meta-cleaner "$env:USERPROFILE\.claude\skills\"
   ```
 * **Dành cho OpenAI Codex (Toàn cục):**
   Sao chép thư mục `ai-meta-cleaner` vào thư mục skills của Codex:
@@ -106,13 +114,20 @@ pip install -r requirements.txt
 
 ### Hướng dẫn sử dụng
 
-#### Gọi tự nhiên qua Claude Code hoặc Codex
-Sau khi cài đặt, bạn chỉ cần ra lệnh bằng ngôn ngữ tự nhiên:
+#### 1. Sử dụng qua Claude Code hoặc Codex
+**Cách 1: Dán ảnh trực tiếp vào khung chat (Đơn giản nhất)**
+Bạn có thể chọn ảnh từ khung chat của **Codex** hoặc **Claude Code** (hoặc sao chép ảnh và dán thẳng vào khung chat), sau đó dùng prompt đơn giản sau để xóa AI Meta cho ảnh:
+```text
+\$ai-meta-cleaner xóa AI Meta cho ảnh này
+```
+*(Lưu ý: Trên Claude Code, bạn cũng có thể gọi bằng dấu gạch chéo `/ai-meta-cleaner`).*
+
+**Cách 2: Ra lệnh bằng ngôn ngữ tự nhiên với đường dẫn file/thư mục**
 > *"Xóa metadata AI cho ảnh `C:\images\anh_tin_tuc.png`"*
 > *"Làm sạch tag C2PA hàng loạt cho tất cả ảnh trong thư mục `./banners`"*
 > *"Dọn dẹp metadata toàn bộ ảnh kể cả thư mục con trong `./posts` và lưu sang `./posts_clean`"*
 
-#### Chạy trực tiếp qua dòng lệnh (CLI)
+#### 2. Chạy trực tiếp qua dòng lệnh (CLI)
 ```bash
 # Làm sạch 1 file ảnh (xuất ra file clean_photo.png cùng thư mục)
 python scripts/remove_c2pa.py duong/dan/photo.png
